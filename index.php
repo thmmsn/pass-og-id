@@ -98,7 +98,7 @@ if(isset($_GET['distrikt']) AND !isset($_GET['avdeling']) ) {
         echo "<a href='?dager=".$deltaDag. "&distrikt=" . $distrikt_id . "&avdeling=" . $row['avdeling_id'] . "'>" . $row['avdeling_navn'] . "</a>";
         echo "<br>";
 
-/* AVMARKER denne for a vise valg
+// AVMARKER denne for a vise valg
         if ($_GET['bareledige']==0) {
             echo "<a href='?dager=".$deltaDag. "&distrikt=" . $distrikt_id . "&avdeling=" . $row['avdeling_id'] . "'>" . $row['avdeling_navn'] . "</a>";
             echo "<br>";
@@ -139,7 +139,7 @@ if(isset($_GET['distrikt']) AND !isset($_GET['avdeling']) ) {
                 }
             }
         }
-*/
+//
     }
 }
 
