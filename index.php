@@ -56,7 +56,7 @@ $PublicId = 'd1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098';
 $begynn_link = "https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branches/";
 $slutt_link =";service" . "PublicId=" . $PublicId . ";customSlotLength=10";
 
-$db = new SQLite3('itWorks.db');
+$db = new SQLite3('politinorge.db');
 
 // $db->exec("CREATE TABLE distrikt(id | distriktnavn | avdeling | avdeling_id
 
@@ -98,7 +98,7 @@ if(isset($_GET['distrikt']) AND !isset($_GET['avdeling']) ) {
         echo "<a href='?dager=".$deltaDag. "&distrikt=" . $distrikt_id . "&avdeling=" . $row['avdeling_id'] . "'>" . $row['avdeling_navn'] . "</a>";
         echo "<br>";
 
-// AVMARKER denne for a vise valg
+/* AVMARKER denne for a vise valg
         if ($_GET['bareledige']==0) {
             echo "<a href='?dager=".$deltaDag. "&distrikt=" . $distrikt_id . "&avdeling=" . $row['avdeling_id'] . "'>" . $row['avdeling_navn'] . "</a>";
             echo "<br>";
@@ -139,7 +139,7 @@ if(isset($_GET['distrikt']) AND !isset($_GET['avdeling']) ) {
                 }
             }
         }
-//
+*/
     }
 }
 
@@ -189,12 +189,12 @@ if(isset($_GET['avdeling']) AND !isset($_GET['dato'])) {
     elseif (count($likeDager)==0) {
         echo "Ingen ledige timer kommende ". $deltaDag . " dager<br>";
         echo "<br><br>";
+        echo "Utvid søket til <br>";
         echo '<form action="./index.php">';
-        echo '<input type="radio" name="dager" value="7"> 7 dager<br>';
-        echo '<input type="radio" name="dager" value="30"> 30 dager<br>';
-        echo '<input type="radio" name="dager" value="90"> 90 dager<br>';
-        echo '<p></p>';
-        echo '<input type="submit" value="Velg antall dager">';
+        echo '<input type="radio" name="dager" value="7">7 ';
+        echo '<input type="radio" name="dager" value="30">30 eller ';
+        echo '<input type="radio" name="dager" value="90">90';
+        echo '<input type="submit" value="Dager">';
         echo '</form>';
     }
 
