@@ -3,7 +3,7 @@
 Nettsiden for å enkelt finne ledige timer i kalenederen til politiet. Henter data fra pass-og-id.politiet.no.
 
 ## Database
-Spørringer til test.db for informasjon om id på distrikt og avdeling samt unike koder for hver avdeling.
+Spørringer til db for informasjon om id på distrikt og avdeling samt unike koder for hver avdeling.
 
 ## Parametere
 
